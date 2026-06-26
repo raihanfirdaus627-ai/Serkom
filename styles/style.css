@@ -1,0 +1,600 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fa;
+}
+
+/* Blok seleksi teks */
+body{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Blok drag gambar */
+img{
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+    color:#00bcd4;
+}
+
+.menu-toggle i{
+    transition:all 0.35s ease;
+}
+
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#00bcd4;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+}
+
+.btn{
+    background:#00bcd4;
+    color:white;
+    padding:12px 24px;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+    padding:12px 24px;
+    border-radius:8px;
+    text-decoration:none;
+}
+
+.btn,
+.btn-outline{
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Efek saat ditekan */
+.btn:active,
+.btn-outline:active{
+    transform: scale(0.95);
+}
+
+/* Animasi setelah diklik */
+.btn.clicked,
+.btn-outline.clicked{
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.about .btn{
+    background: #00bcd4;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.about .btn:hover{
+    background: #0097a7;
+}
+
+.mobile-contact{
+    display:none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Saat hover */
+nav ul li a:hover{
+    background: #00bcd4;
+    color: white;
+}
+
+/* Saat aktif/diklik */
+nav ul li a.active{
+    background: #00bcd4;
+    color: white;
+}
+
+.hero{
+    position:relative;
+    min-height:90vh;
+    background:url("https://images.unsplash.com/photo-1518770660439-4636190af475?w=1500")
+    center/cover;
+    display:flex;
+    align-items:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.65);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero-text{
+    max-width:650px;
+    color:white;
+}
+
+.hero-text span{
+    color:#00d4ff;
+}
+
+.hero-text h1{
+    font-size:60px;
+    margin:20px 0;
+}
+
+.hero-text p{
+    line-height:1.8;
+}
+
+.hero-btn{
+    margin-top:30px;
+    display:flex;
+    gap:15px;
+}
+
+.service-form{
+    position:absolute;
+    bottom:-40px;
+    left:50%;
+    transform:translateX(-50%);
+    background:white;
+    width:90%;
+    max-width:1100px;
+    padding:20px;
+    border-radius:15px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.service-form input,
+.service-form select,
+.service-form button{
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.service-form button{
+    background:#00bcd4;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.service-form{
+    position:absolute;
+    bottom:-80px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.features{
+    padding:120px 0 80px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:#003c5f;
+    color:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    cursor:pointer;
+    transition:all .4s ease;
+}
+
+.card i{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.card.active{
+    transform:translateY(-10px) scale(1.05);
+    background:#00bcd4;
+    box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+.card i{
+    transition:0.4s;
+}
+
+.card.active i{
+    transform:rotate(360deg);
+}
+
+.about{
+    padding:80px 0;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-img img{
+    width:100%;
+    border-radius:20px;
+}
+
+.about-text h2{
+    margin:20px 0;
+}
+
+.about-list{
+    margin:25px 0;
+}
+
+.about-list div{
+    margin-bottom:10px;
+}
+
+.about-list i{
+    color:#00bcd4;
+}
+
+.services{
+    padding:80px 0;
+    background:white;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service-box{
+    background:#f5f7fa;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+
+.service-box i{
+    font-size:40px;
+    color:#00bcd4;
+    margin-bottom:15px;
+}
+
+.service-box.active{
+    transform:scale(1.08);
+    background:#00bcd4;
+    color:white;
+}
+
+.service-box.active i{
+    color:white;
+}
+
+.testimoni{
+    padding:80px 0;
+}
+
+.testimonial-box{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    max-width:700px;
+    margin:auto;
+}
+
+.contact{
+    background:#003c5f;
+    color:white;
+    text-align:center;
+    padding:80px 0;
+}
+
+footer{
+    background:#02283d;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:992px){
+
+    .menu-toggle{
+        display:block;
+        font-size:28px;
+        cursor:pointer;
+        z-index:1001;
+    }
+
+    nav{
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:white;
+
+        overflow:hidden;
+
+        max-height:0;
+        opacity:0;
+
+        transition:
+            max-height 0.4s ease,
+            opacity 0.3s ease;
+
+        box-shadow:0 5px 15px rgba(0,0,0,.1);
+    }
+
+    nav.active{
+        max-height:400px;
+        opacity:1;
+    }
+
+    nav ul{
+        flex-direction:column;
+        gap:0;
+    }
+
+    nav ul li{
+        border-bottom:1px solid #eee;
+    }
+
+    nav ul li a{
+        display:block;
+        padding:16px 20px;
+        transition:0.3s;
+    }
+
+    nav ul li a:hover{
+        padding-left:30px;
+    }
+
+    .nav .btn{
+    display:none;
+    }
+
+    .mobile-contact{
+    display:block;
+    }
+}
+
+@media (max-width:768px){
+
+    /* HERO */
+    .hero{
+        min-height:auto;
+        padding:100px 20px 40px;
+        display:block;
+    }
+
+    .hero-content{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .hero-text{
+        max-width:100%;
+        text-align:center;
+        margin-bottom:30px;
+    }
+
+    .hero-text h1{
+        font-size:38px;
+        line-height:1.2;
+    }
+
+    .hero-text p{
+        text-align:center;
+    }
+
+    .hero-btn{
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        gap:15px;
+    }
+
+    .hero-btn .btn,
+    .hero-btn .btn-outline{
+        width:100%;
+        max-width:300px;
+        text-align:center;
+    }
+
+    /* GRID */
+    .cards,
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    /* FORM */
+    .service-form{
+        position:relative;
+        left:auto;
+        bottom:auto;
+        transform:none;
+        width:100%;
+        max-width:500px;
+        margin:30px auto 0;
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .service-form input,
+    .service-form select,
+    .service-form button{
+        width:100%;
+    }
+
+    /* FEATURES */
+    .features{
+        padding-top:50px;
+    }
+
+    /* ABOUT */
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .about-img{
+        text-align:center;
+    }
+
+    .about-img img{
+        width:100%;
+        max-width:350px;
+    }
+
+    .about-text{
+        text-align:center;
+    }
+
+    .about-list{
+        text-align:left;
+        max-width:300px;
+        margin:25px auto;
+    }
+
+    .about .btn{
+        display:inline-block;
+    }
+
+    .hero{
+        padding-bottom:30px;
+    }
+
+    .service-form{
+        position:relative;
+        left:auto;
+        bottom:auto;
+        transform:none;
+
+        width:100%;
+        max-width:100%;
+
+        margin:30px auto 0;
+
+        display:flex;
+        flex-direction:column;
+    }
+
+    /* WHATSAPP */
+    .whatsapp-float{
+        bottom:15px;
+        right:15px;
+        width:50px;
+        height:50px;
+        line-height:50px;
+        font-size:28px;
+    }
+}
+
+.whatsapp-float{
+    position:fixed;
+    width:55px;
+    height:55px;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    text-align:center;
+    font-size:32px;
+    line-height:55px;
+    box-shadow:0 4px 12px rgba(0,0,0,.3);
+    z-index:9999;
+    transition:.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+    background:#1ebe5d;
+}
